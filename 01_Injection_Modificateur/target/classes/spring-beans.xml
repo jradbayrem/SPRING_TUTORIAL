@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- Declaration du bean Developpeur -->
+	<bean id="devBean" class="fr.adaming.beans.Developpeur">
+		<!-- injection des proprietées par modificateur -->
+		<property name="nom" value="Jean-Paul" />
+		<property name="anneeExperience" value="48" />
+	</bean>
+
+	<!-- Declaration du bean Chef du projet -->
+	<bean id="chefBean" class="fr.adaming.beans.Developpeur">
+		<!-- injection des proprietées par modificateur -->
+		<property name="nom" value="Robert" />
+		<property name="anneeExperience" value="100" />
+	</bean>
+
+	<!-- Declaration du bean Chef du projet -->
+
+	<bean id="societeBean" class="fr.adaming.beans.Societe">
+		<!-- injection de proprietée de type premitif par modificateur en utlisant 
+			l'attribut value -->
+		<property name="nom" value="TOTOTiti" />
+		<!-- injection de proprietée de type Objet (bean)*** Collaborateur *** 
+			par modificateur en utlisant l'attribut ref -->
+		<property name="developpeur" ref="devBean" />
+		<property name="chefProjet" ref="chefBean" />
+	</bean>
+
+</beans>
