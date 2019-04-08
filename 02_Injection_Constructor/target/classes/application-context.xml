@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<!-- Declaration du bean user1 sans index -->
+	<bean id="userBean1" class="fr.adaming.bean.Utilisateur">
+		<constructor-arg value="BOULMERDJ" type="java.lang.String" />
+		<constructor-arg value="1, rue Alexandre Dumas, VilleJuif"
+			type="java.lang.String" />
+		<constructor-arg type="int">
+			<value>31</value>
+		</constructor-arg>
+		<constructor-arg value="100" type="double" />
+	</bean>
+
+	<!-- Declaration du bean user1 avec index -->
+	<bean id="userBean2" class="fr.adaming.bean.Utilisateur">
+		<constructor-arg value="35" index="2"  />
+		<constructor-arg value="Nantes" index="1"
+			type="java.lang.String" />
+		<constructor-arg value="Jean" index="0" />
+		<constructor-arg value="3500" index="3" />
+	</bean>
+
+</beans>
