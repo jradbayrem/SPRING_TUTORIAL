@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- def du bean adresse -->
+	<bean id="adresse1" class="fr.adaming.bean.Adresse" >
+		<property name="adresseComplete" value="adaming Lyon st herblaiazazaz" />
+	</bean>
+
+	<bean id="adresse2" class="fr.adaming.bean.Adresse">
+		<property name="adresseComplete" value="adaming Lyon st herblain2" />
+	</bean>
+	<bean id="adresse" class="fr.adaming.bean.Adresse">
+
+		<property name="adresseComplete" value="adaming Lyon st herblain3" />
+	</bean>
+	<!-- def du bean client -->
+	<!-- injection automatique de la prop Adresse du client -->
+	<bean id="clientBean" class="fr.adaming.bean.Client" autowire="constructor">
+		<property name="nom" value="#{adresse1.getAdresseComplete()}" />
+	</bean>
+
+	<bean id="clientBean2" class="fr.adaming.bean.Client" autowire="constructor">
+		<qualifier type="fr.adaming.bean.Adresse" value="adresse2"></qualifier>
+		<property name="nom" value="INTI Formation2" />
+	</bean>
+	<bean id="clientBean3" class="fr.adaming.bean.Client" autowire="constructor">
+		<qualifier value="adresse3"></qualifier>
+		<property name="nom" value="INTI Formation3" />
+
+	</bean>
+</beans>
