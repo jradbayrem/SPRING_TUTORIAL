@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+
+	<bean id="banqueBean" class="fr.adaming.service.Banque" />
+
+
+	<!--======================================= -->
+	<!--=== DECLARATIONS DES GREFFONS ========= -->
+	<!--======================================= -->
+	<!-- def du bean : greffon before -->
+	<bean id="loggingBeforeAdviceBean" class="fr.adaming.aop.LoggingBeforeAdvice" />
+
+	<!-- def du bean : After Returning -->
+	<bean id="loggingAfterAdviceBean" class="fr.adaming.aop.LoggingAfterAdvice" />
+
+	<!-- def du bean : After Throwing -->
+	<bean id="loggingThrowsAdviceBean" class="fr.adaming.aop.LoggingThrowsAdvice" />
+
+	<!-- def du bean : Around -->
+	<bean id="loggingAroundAdviceBean" class="fr.adaming.aop.LoggingAroundAdvice" />
+
+	<!--======================================= -->
+	<!--==== DACLARATION DES PROXY ============ -->
+	<!--======================================= -->
+	<!-- proxy arithm calc -->
+	<bean id="banqueProxyBean" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="proxyInterfaces">
+			<list>
+				<value>fr.adaming.service.Ibanque</value>
+			</list>
+		</property>
+		<property name="target" ref="banqueBean" />
+		<property name="interceptorNames">
+			<list>
+				<value>loggingBeforeAdviceBean</value>
+				<value>loggingAfterAdviceBean</value>
+				<value>loggingThrowsAdviceBean</value>
+				<value>loggingAroundAdviceBean</value>
+			</list>
+		</property>
+	</bean>
+</beans>

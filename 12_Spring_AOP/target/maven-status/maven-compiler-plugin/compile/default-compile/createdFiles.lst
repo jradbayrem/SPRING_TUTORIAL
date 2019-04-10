@@ -1,0 +1,7 @@
+fr\adaming\aop\LoggingAfterAdvice.class
+fr\adaming\aop\LoggingAroundAdvice.class
+fr\adaming\service\Ibanque.class
+fr\adaming\service\Banque.class
+fr\adaming\test\ClassTest.class
+fr\adaming\aop\LoggingBeforeAdvice.class
+fr\adaming\aop\LoggingThrowsAdvice.class
