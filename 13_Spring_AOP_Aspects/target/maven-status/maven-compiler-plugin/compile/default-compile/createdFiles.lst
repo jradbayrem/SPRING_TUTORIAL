@@ -1,0 +1,4 @@
+fr\adaming\test\ClassTest.class
+fr\adaming\service\Ibanque.class
+fr\adaming\aspectJ\BanqueLoggingAspect.class
+fr\adaming\service\Banque.class
