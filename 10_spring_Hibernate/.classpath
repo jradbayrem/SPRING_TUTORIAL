@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate4/antlr-2.7.7.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate4/dom4j-1.6.1.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate4/hibernate-commons-annotations-4.0.2.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate4/hibernate-core-4.2.21.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate4/hibernate-entitymanager-4.2.21.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate4/hibernate-jpa-2.0-api-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate4/javassist-3.18.1-GA.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate4/jboss-logging-3.1.0.GA.jar"/>
+	<classpathentry kind="lib" path="lib/hibernate/hibernate4/jboss-transaction-api_1.1_spec-1.0.1.Final.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.aopalliance_1.0.0.v201105210816.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.apache.commons.logging_1.1.1.v201101211721.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.apache.log4j_1.2.15.v201012070815.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.aspectj.ajde_1.8.7.20150910082200.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.aspectj.runtime_1.8.7.20150910082200.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.aspectj.runtime.source_1.8.7.20150910082200.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.aspectj.weaver_1.8.7.20150910082200.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.springframework.aop_4.2.3.20151116-RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.springframework.beans_4.2.3.20151116-RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.springframework.context_4.2.3.20151116-RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.springframework.context.support_4.2.3.20151116-RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.springframework.core_4.2.3.20151116-RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.springframework.data.core_1.9.1.20150106-RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.springframework.expression_4.2.3.20151116-RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.springframework.jdbc_4.2.3.20151116-RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.springframework.orm_4.2.3.20151116-RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/spring/org.springframework.transaction_4.1.4.20150106-RELEASE.jar"/>
+	<classpathentry kind="lib" path="lib/junit-4.10.jar"/>
+	<classpathentry kind="lib" path="lib/spring/spring-test-4.1.4.RELEASE.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/bjrad/Desktop/mysql-connector-java-5.1.46-bin.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
