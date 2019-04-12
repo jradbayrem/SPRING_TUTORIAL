@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.1.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+
+
+	<!-- activer la detection des annotations ex : @Autowired -->
+	<context:annotation-config />
+
+	<!-- activer l'auto scan des composants (beans) -->
+	<context:component-scan base-package="fr.adaming" />
+
+	<!-- localisation du fichier de proprietes : jdbc.properties -->
+	<context:property-placeholder location="classpath*:jdbc.properties" />
+
+	<!-- bean du dataSource -->
+	<bean id="datasourceBean"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+		<property name="driverClassName" value="${jdbc.driverClassName}" />
+		<property name="url" value="${jdbc.url}" />
+		<property name="username" value="${jdbc.username}" />
+		<property name="password" value="${jdbc.password}" />
+
+	</bean>
+
+	<!-- bean de la session factory -->
+	<bean id="sessionFactoryBean"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+
+		<!-- injection du datasource -->
+		<property name="dataSource" ref="datasourceBean" />
+
+		<!-- les classes annotées -->
+		<property name="packagesToScan">
+			<value>fr.adaming.model</value>
+		</property>
+
+		<!-- proprietes d'hibernate -->
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">${jdbc.hibernate.dialect}</prop>
+				<prop key="hibernate.show_sql">${jdbc.hibernate.show_sql}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${jdbc.hibernate.hbm2ddl.auto}</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- bean du transaction manager : gestion des transactions -->
+	<bean id="transactionManagerBean"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<!-- injection de la session factory -->
+		<property name="sessionFactory" ref="sessionFactoryBean" />
+	</bean>
+
+
+	<!-- detection des annotations des transactions : @Transactional -->
+	<tx:annotation-driven transaction-manager="transactionManagerBean" />
+
+</beans>
